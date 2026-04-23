@@ -1,4 +1,4 @@
-package org.example.singleton;
+package org.example.Singleton;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
