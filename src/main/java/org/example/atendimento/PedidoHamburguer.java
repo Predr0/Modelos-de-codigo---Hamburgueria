@@ -1,4 +1,4 @@
-package org.example.bridge;
+package org.example.atendimento;
 
 public class PedidoHamburguer extends Pedido {
     public PedidoHamburguer(MetodoEntrega metodoEntrega) {

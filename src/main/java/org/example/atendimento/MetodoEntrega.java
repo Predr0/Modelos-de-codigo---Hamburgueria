@@ -1,4 +1,4 @@
-package org.example.bridge;
+package org.example.atendimento;
 
 public interface MetodoEntrega {
     String prepararEntrega();

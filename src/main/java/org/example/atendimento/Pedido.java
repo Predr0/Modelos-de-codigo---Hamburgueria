@@ -1,4 +1,4 @@
-package org.example.bridge;
+package org.example.atendimento;
 
 public abstract class Pedido {
     protected MetodoEntrega metodoEntrega;

@@ -1,4 +1,4 @@
-package org.example.bridge;
+package org.example.atendimento;
 
 public class EntregaDelivery implements MetodoEntrega {
     public String prepararEntrega() {
