@@ -1,4 +1,4 @@
-package org.example.factory;
+package org.example.cardapio;
 
 public class HamburguerFactory {
     public static Hamburguer criarHamburguer(String tipo) {

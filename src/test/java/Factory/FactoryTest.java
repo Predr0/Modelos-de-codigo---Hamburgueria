@@ -1,5 +1,9 @@
 package org.example.factory;
 
+import org.example.cardapio.Hamburguer;
+import org.example.cardapio.HamburguerCarne;
+import org.example.cardapio.HamburguerFactory;
+import org.example.cardapio.HamburguerVegano;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
