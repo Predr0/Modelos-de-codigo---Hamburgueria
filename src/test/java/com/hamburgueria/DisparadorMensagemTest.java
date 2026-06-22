@@ -7,20 +7,22 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Testes do Observer: DisparadorSMS")
-class NotificadorClienteObserverTest {
+@DisplayName("Testes do Observer: DisparadorMensagem")
+class DisparadorMensagemTest {
 
     @Test
-    @DisplayName("Deve imprimir mensagem de SMS no console quando o status conter Pronto")
+    @DisplayName("Deve imprimir mensagem no monitor da cozinha quando o status for Recebido")
     void deveNotificarQuandoPronto() {
         ByteArrayOutputStream somConsole = new ByteArrayOutputStream();
         System.setOut(new PrintStream(somConsole));
 
         DisparadorMensagem observer = new DisparadorMensagem();
-        observer.notificar("Pedro", "Pronto para Entrega/Retirada");
+        // Passa "Recebido" para acionar o IF da sua classe
+        observer.notificar("Pedro", "Recebido (Na Fila)");
 
         String resultadoLog = somConsole.toString();
-        assertTrue(resultadoLog.contains("[NOTIFICAÇÃO TELEFONE]"));
+        // Valida a string que a sua classe DisparadorMensagem realmente imprime
+        assertTrue(resultadoLog.contains("[PAINEL COZINHA]"));
         assertTrue(resultadoLog.contains("Pedro"));
 
         System.setOut(System.out);

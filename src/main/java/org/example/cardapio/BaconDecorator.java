@@ -17,4 +17,11 @@ public class BaconDecorator extends AdicionalDecorator {
         // Pega o preço do que já existia e soma o valor do bacon
         return super.getPreco() + 4.50;
     }
+
+    @Override
+    public Hamburguer clonar() {
+        return new QueijoDecorator(this.hamburguerDecorado.clonar());
+    }
+
+
 }

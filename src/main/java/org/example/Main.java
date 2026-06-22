@@ -25,7 +25,7 @@ public class Main {
         PedidoHamburguer pedido1 = new PedidoHamburguer("Pedro", meuBurger, entregaMotoboy);
 
         pedido1.anexarObservador(new PainelProducao());
-        pedido1.anexarObservador(new DisparadorSMS());
+        pedido1.anexarObservador(new DisparadorMensagem());
 
         System.out.println("[Status Atual]: " + pedido1.getSituacaoAtual());
         pedido1.anexarObservador((cliente, status) -> {});

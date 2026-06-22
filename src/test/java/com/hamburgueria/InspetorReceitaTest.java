@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class InspetorReceitaTest {
 
     @Test
-    @DisplayName("Deve visitar o pedido e extrair os dados simulando a fiscalização da Receita")
+    @DisplayName("Deve visitar o pedido e extrair os dados simulando a fiscalização")
     void deveVisitarEExtrairDadosFiscais() {
         ByteArrayOutputStream somConsole = new ByteArrayOutputStream();
         System.setOut(new PrintStream(somConsole));
@@ -28,8 +28,10 @@ class InspetorReceitaTest {
 
         String resultadoLog = somConsole.toString();
 
-        assertTrue(resultadoLog.contains("[RECEITA FEDERAL]"));
+
+        assertTrue(resultadoLog.contains("[AUDITOR FISCAL VISITOR]"));
         assertTrue(resultadoLog.contains("Cliente associado: Pietra"));
+        assertTrue(resultadoLog.contains("Valor tributável: R$ 25.0"));
 
         System.setOut(System.out);
     }
