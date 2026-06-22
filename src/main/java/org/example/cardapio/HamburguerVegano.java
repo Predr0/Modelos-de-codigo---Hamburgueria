@@ -7,4 +7,6 @@ public class HamburguerVegano implements Hamburguer {
     public double getPreco() {
         return 28.00;
     }
+    @Override
+    public Hamburguer clonar() { return new HamburguerVegano(); }
 }

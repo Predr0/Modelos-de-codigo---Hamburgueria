@@ -1,6 +1,6 @@
 package org.example.atendimento;
 
-public class NotificadorCozinhaObserver implements PedidoObserver {
+public class DisparadorMensagem implements PedidoObserver {
     @Override
     public void notificar(String nomeCliente, String nomeSituacao) {
         if (nomeSituacao.contains("Recebido")) {

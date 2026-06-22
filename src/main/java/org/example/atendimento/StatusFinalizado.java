@@ -1,6 +1,6 @@
 package org.example.atendimento;
 
-public class SituacaoProntoState implements SituacaoPedidoState {
+public class StatusFinalizado implements StatusOrdem {
     @Override
     public void avancar(PedidoHamburguer pedido) {
         throw new IllegalStateException("O pedido já está pronto e finalizado.");

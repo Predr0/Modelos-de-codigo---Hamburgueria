@@ -1,9 +1,9 @@
 package org.example.atendimento;
 
-public class SituacaoGrelhandoState implements SituacaoPedidoState {
+public class StatusPreparo implements StatusOrdem {
     @Override
     public void avancar(PedidoHamburguer pedido) {
-        pedido.setSituacaoInterna(new SituacaoProntoState());
+        pedido.setSituacaoInterna(new StatusFinalizado());
     }
 
     @Override

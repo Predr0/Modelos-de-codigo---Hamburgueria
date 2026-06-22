@@ -1,6 +1,6 @@
 package org.example.atendimento;
 
-public interface SituacaoPedidoState {
+public interface StatusOrdem {
     void avancar(PedidoHamburguer pedido);
     void cancelar(PedidoHamburguer pedido);
     String getNomeSituacao();

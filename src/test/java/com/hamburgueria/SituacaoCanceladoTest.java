@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Testes do State: SituacaoCanceladoState")
-class SituacaoCanceladoStateTest {
+class SituacaoCanceladoTest {
 
     @Test
     @DisplayName("Deve retornar o nome textual correto do estado")
     void deveRetornarNomeCorreto() {
-        SituacaoCanceladoState state = new SituacaoCanceladoState();
+        StatusEstornado state = new StatusEstornado();
         assertEquals("Cancelado", state.getNomeSituacao());
     }
 
@@ -21,7 +21,7 @@ class SituacaoCanceladoStateTest {
     void deveBloquearAlteracoesQuandoCancelado() {
         Hamburguer burger = HamburguerFactory.criarHamburguer("CARNE");
         PedidoHamburguer pedido = new PedidoHamburguer("Pedro", burger, new EntregaLocal());
-        SituacaoCanceladoState state = new SituacaoCanceladoState();
+        StatusEstornado state = new StatusEstornado();
 
         assertThrows(IllegalStateException.class, () -> state.avancar(pedido));
         assertThrows(IllegalStateException.class, () -> state.cancelar(pedido));

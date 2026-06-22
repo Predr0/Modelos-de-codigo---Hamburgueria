@@ -2,7 +2,7 @@ package org.example.auditoria;
 
 import org.example.atendimento.PedidoHamburguer;
 
-public class AuditorFiscalVisitor implements AuditorVisitor {
+public class InspetorReceita implements AuditorVisitor {
     @Override
     public void visitarPedido(PedidoHamburguer pedido) {
         System.out.println("[AUDITOR FISCAL VISITOR] Inspecionando Pedido...");

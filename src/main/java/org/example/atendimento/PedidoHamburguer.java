@@ -9,14 +9,14 @@ public class PedidoHamburguer {
     private final Hamburguer hamburguer;
     private final MetodoEntrega metodoEntrega; // Sua interface original do Bridge
 
-    private SituacaoPedidoState situacaoAtual; // O State
+    private StatusOrdem situacaoAtual; // O State
     private final List<PedidoObserver> observadores = new ArrayList<>(); // O Observer
 
     public PedidoHamburguer(String nomeCliente, Hamburguer hamburguer, MetodoEntrega metodoEntrega) {
         this.nomeCliente = nomeCliente;
         this.hamburguer = hamburguer;
         this.metodoEntrega = metodoEntrega;
-        this.situacaoAtual = new SituacaoRecebidoState(); // Inicia recebido
+        this.situacaoAtual = new StatusNovo(); // Inicia recebido
     }
 
     // Métodos do State
@@ -30,7 +30,7 @@ public class PedidoHamburguer {
         this.dispararNotificacoes();
     }
 
-    protected void setSituacaoInterna(SituacaoPedidoState novaSituacao) {
+    protected void setSituacaoInterna(StatusOrdem novaSituacao) {
         this.situacaoAtual = novaSituacao;
     }
 

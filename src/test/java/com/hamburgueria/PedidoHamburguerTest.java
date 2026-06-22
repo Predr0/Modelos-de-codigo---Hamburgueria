@@ -28,8 +28,8 @@ class PedidoHamburguerTest {
         PedidoHamburguer pedido = new PedidoHamburguer("Pedro", burger, entrega);
 
         // Adiciona os observadores para garantir que o disparo de notificações não quebra o fluxo
-        pedido.anexarObservador(new NotificadorCozinhaObserver());
-        pedido.anexarObservador(new NotificadorClienteObserver());
+        pedido.anexarObservador(new DisparadorMensagem());
+        pedido.anexarObservador(new PainelProducao());
 
         // 1. Avança de Recebido -> Grelhando
         pedido.avancarEtapa();

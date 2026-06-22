@@ -6,13 +6,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Testes do State: SituacaoGrelhandoState")
-class SituacaoGrelhandoStateTest {
+@DisplayName("Testes do Estado: StatusPreparo")
+class StatusPreparoTest {
 
     @Test
-    @DisplayName("Deve retornar o nome textual correto do estado")
+    @DisplayName("Deve retornar o nome textual correto do estado na chapa")
     void deveRetornarNomeCorreto() {
-        SituacaoGrelhandoState state = new SituacaoGrelhandoState();
+        StatusPreparo state = new StatusPreparo();
         assertEquals("Grelhando (Na Chapa)", state.getNomeSituacao());
     }
 
@@ -21,7 +21,7 @@ class SituacaoGrelhandoStateTest {
     void deveLancarExcecaoAoCancelarNaChapa() {
         Hamburguer burger = HamburguerFactory.criarHamburguer("CARNE");
         PedidoHamburguer pedido = new PedidoHamburguer("Pedro", burger, new EntregaLocal());
-        SituacaoGrelhandoState state = new SituacaoGrelhandoState();
+        StatusPreparo state = new StatusPreparo();
 
         assertThrows(IllegalStateException.class, () -> {
             state.cancelar(pedido);

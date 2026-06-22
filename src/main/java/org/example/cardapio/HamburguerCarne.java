@@ -7,4 +7,6 @@ public class HamburguerCarne implements Hamburguer {
     public double getPreco() {
         return 25.00;
     }
+    @Override
+    public Hamburguer clonar() { return new HamburguerCarne(); }
 }

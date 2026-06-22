@@ -12,7 +12,7 @@ class SituacaoRecebidoStateTest {
     @Test
     @DisplayName("Deve retornar o nome textual correto do estado")
     void deveRetornarNomeCorreto() {
-        SituacaoRecebidoState state = new SituacaoRecebidoState();
+        StatusNovo state = new StatusNovo();
         assertEquals("Recebido (Na Fila)", state.getNomeSituacao());
     }
 
@@ -21,7 +21,7 @@ class SituacaoRecebidoStateTest {
     void deveAvancarParaGrelhando() {
         Hamburguer burger = HamburguerFactory.criarHamburguer("CARNE");
         PedidoHamburguer pedido = new PedidoHamburguer("Pedro", burger, new EntregaLocal());
-        SituacaoRecebidoState state = new SituacaoRecebidoState();
+        StatusNovo state = new StatusNovo();
 
         state.avancar(pedido);
         assertEquals("Grelhando (Na Chapa)", pedido.getSituacaoAtual());
