@@ -1,5 +1,7 @@
 package org.example.singleton;
 
+import org.example.auditoria.CaixaMemento;
+
 public class Caixa {
     private static Caixa instancia;
     private double saldo;
@@ -25,5 +27,16 @@ public class Caixa {
 
     public void resetarCaixa() {
         this.saldo = 0.0;
+    }
+
+    // OS DOIS MÉTODOS DEVEM FICAR AQUI:
+    public CaixaMemento salvarNoMemento() {
+        return new CaixaMemento(this.saldo);
+    }
+
+    public void restaurarDoMemento(CaixaMemento memento) {
+        if (memento != null) {
+            this.saldo = memento.getSaldoSalvo();
+        }
     }
 }
