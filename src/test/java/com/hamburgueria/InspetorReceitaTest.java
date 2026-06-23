@@ -21,7 +21,7 @@ class InspetorReceitaTest {
         System.setOut(new PrintStream(somConsole));
 
         Hamburguer burger = HamburguerFactory.criarHamburguer("CARNE");
-        PedidoHamburguer pedido = new PedidoHamburguer("Pietra", burger, new EntregaLocal());
+        PedidoHamburguer pedido = new PedidoHamburguer("Pedroca", burger, new EntregaLocal());
 
         InspetorReceita visitor = new InspetorReceita();
         visitor.visitarPedido(pedido);
@@ -30,7 +30,7 @@ class InspetorReceitaTest {
 
 
         assertTrue(resultadoLog.contains("[AUDITOR FISCAL VISITOR]"));
-        assertTrue(resultadoLog.contains("Cliente associado: Pietra"));
+        assertTrue(resultadoLog.contains("Cliente associado: Pedroca"));
         assertTrue(resultadoLog.contains("Valor tributável: R$ 25.0"));
 
         System.setOut(System.out);
