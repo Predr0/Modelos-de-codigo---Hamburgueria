@@ -15,7 +15,6 @@ public class ColecaoPedidos {
         return new InteradorListaPedidos();
     }
 
-    // Classe interna que implementa o Iterator mascarando a estrutura da List
     private class InteradorListaPedidos implements InteradorPedidos {
         private int indice = 0;
 

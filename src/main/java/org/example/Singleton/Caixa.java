@@ -29,7 +29,6 @@ public class Caixa {
         this.saldo = 0.0;
     }
 
-    // OS DOIS MÉTODOS DEVEM FICAR AQUI:
     public CaixaMemento salvarNoMemento() {
         return new CaixaMemento(this.saldo);
     }

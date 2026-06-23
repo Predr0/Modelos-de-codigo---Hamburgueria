@@ -9,7 +9,6 @@ public class MercadoPagoAdapter implements ProcessadorPagamentoTarget {
 
     @Override
     public void processar(double valor) {
-        // Traduz o método do nosso sistema para o método do SDK deles
         this.sdkMercadoPago.enviarCobrançaExterna(valor);
     }
 }

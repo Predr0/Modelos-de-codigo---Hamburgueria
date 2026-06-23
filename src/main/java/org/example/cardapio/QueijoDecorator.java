@@ -14,7 +14,6 @@ public class QueijoDecorator extends AdicionalDecorator {
 
     @Override
     public double getPreco() {
-        // Pega o preço do que já existia e soma o valor do queijo
         return super.getPreco() + 3.00;
     }
 

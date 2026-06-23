@@ -13,7 +13,6 @@ class PagamentoCartaoStrategyTest {
     void deveCalcularTaxaCartao() {
         PagamentoCartaoStrategy cartao = new PagamentoCartaoStrategy();
 
-        // Se o burger custa R$ 100,00, com 5% de taxa fica R$ 105,00
         double valorFinal = cartao.calcularValorFinal(100.00);
 
         assertEquals(105.00, valorFinal, 0.001);

@@ -24,7 +24,7 @@ class MercadoPagoAdapterTest {
         adaptador.processar(50.00);
 
         String resultadoLog = somConsole.toString();
-        // Valida se o texto disparado veio lá de dentro do SDK do Mercado Pago
+
         assertTrue(resultadoLog.contains("[API MERCADO PAGO]"));
         assertTrue(resultadoLog.contains("Pago R$ 50.0"));
 

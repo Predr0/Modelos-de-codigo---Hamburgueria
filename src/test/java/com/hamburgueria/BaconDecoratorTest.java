@@ -14,8 +14,8 @@ class BaconDecoratorTest {
     @Test
     @DisplayName("Deve somar o valor do bacon ao hambúrguer de carne base")
     void deveSomarBaconAoHamburguerCarne() {
-        Hamburguer burger = new HamburguerCarne(); // R$ 25,00
-        burger = new BaconDecorator(burger); // + R$ 4,50
+        Hamburguer burger = new HamburguerCarne();
+        burger = new BaconDecorator(burger);
 
         assertEquals(29.50, burger.getPreco(), 0.001);
     }
@@ -23,9 +23,9 @@ class BaconDecoratorTest {
     @Test
     @DisplayName("Deve permitir e calcular corretamente o acúmulo de porções duplas de bacon")
     void deveCalcularDuploBacon() {
-        Hamburguer burger = new HamburguerVegano(); // R$ 28,00
-        burger = new BaconDecorator(burger); // + R$ 4,50
-        burger = new BaconDecorator(burger); // + R$ 4,50
+        Hamburguer burger = new HamburguerVegano();
+        burger = new BaconDecorator(burger);
+        burger = new BaconDecorator(burger);
 
         assertEquals(37.00, burger.getPreco(), 0.001);
     }

@@ -17,7 +17,6 @@ class PagamentoProxyTest {
         ByteArrayOutputStream somConsole = new ByteArrayOutputStream();
         System.setOut(new PrintStream(somConsole));
 
-        // Criamos um processador anônimo ultra simples só para ver se o proxy chama ele no fim
         ProcessadorPagamentoTarget processadorReal = valor -> System.out.println("Pagamento Real Efetuado: " + valor);
         PagamentoProxy proxy = new PagamentoProxy(processadorReal);
 
@@ -25,7 +24,7 @@ class PagamentoProxyTest {
 
         String resultadoLog = somConsole.toString();
 
-        // Verifica se o Proxy executou as suas funções de auditoria e segurança
+
         assertTrue(resultadoLog.contains("[PROXY SEGURANÇA]"));
         assertTrue(resultadoLog.contains("[PROXY AUDITORIA] Log: Tentativa de débito gerada"));
         assertTrue(resultadoLog.contains("Pagamento Real Efetuado: 45.0"));

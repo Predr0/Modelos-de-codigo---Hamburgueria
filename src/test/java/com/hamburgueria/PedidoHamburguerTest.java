@@ -27,15 +27,12 @@ class PedidoHamburguerTest {
         MetodoEntrega entrega = new EntregaLocal();
         PedidoHamburguer pedido = new PedidoHamburguer("Pedro", burger, entrega);
 
-        // Adiciona os observadores para garantir que o disparo de notificações não quebra o fluxo
         pedido.anexarObservador(new DisparadorMensagem());
         pedido.anexarObservador(new PainelProducao());
 
-        // 1. Avança de Recebido -> Grelhando
         pedido.avancarEtapa();
         assertEquals("Grelhando (Na Chapa)", pedido.getSituacaoAtual());
 
-        // 2. Avança de Grelhando -> Pronto
         pedido.avancarEtapa();
         assertEquals("Pronto para Entrega/Retirada", pedido.getSituacaoAtual());
     }
@@ -58,7 +55,7 @@ class PedidoHamburguerTest {
         MetodoEntrega entrega = new EntregaDelivery();
         PedidoHamburguer pedido = new PedidoHamburguer("Pedro", burger, entrega);
 
-        pedido.avancarEtapa(); // Mudou para Grelhando
+        pedido.avancarEtapa();
 
         IllegalStateException excecao = assertThrows(IllegalStateException.class, () -> {
             pedido.cancelarPedido();
@@ -75,13 +72,11 @@ class PedidoHamburguerTest {
         MetodoEntrega entrega = new EntregaLocal();
         PedidoHamburguer pedido = new PedidoHamburguer("Pedro", burger, entrega);
 
-        pedido.avancarEtapa(); // Grelhando
-        pedido.avancarEtapa(); // Pronto
+        pedido.avancarEtapa();
+        pedido.avancarEtapa();
 
-        // Tentar avançar mais uma vez
         assertThrows(IllegalStateException.class, pedido::avancarEtapa);
 
-        // Tentar cancelar depois de pronto
         assertThrows(IllegalStateException.class, pedido::cancelarPedido);
     }
 
@@ -89,7 +84,7 @@ class PedidoHamburguerTest {
     @DisplayName("Deve processar corretamente o texto e os preços integrando a Factory e o Bridge")
     void deveProcessarTextoEPrecoPeloBridge() {
         Hamburguer burger = HamburguerFactory.criarHamburguer("CARNE");
-        burger = new BaconDecorator(burger); // 25.00 + 4.50 = 29.50
+        burger = new BaconDecorator(burger); // 25.00 + 4.50 = 29.50 <--
         MetodoEntrega entrega = new EntregaDelivery();
 
         PedidoHamburguer pedido = new PedidoHamburguer("Pedro", burger, entrega);

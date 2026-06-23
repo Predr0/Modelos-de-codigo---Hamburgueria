@@ -14,7 +14,6 @@ public class BaconDecorator extends AdicionalDecorator {
 
     @Override
     public double getPreco() {
-        // Pega o preço do que já existia e soma o valor do bacon
         return super.getPreco() + 4.50;
     }
 

@@ -30,10 +30,9 @@ class CaixaTest {
     void deveRegistrarVendasEAcumularSaldo() {
         Caixa caixa = Caixa.getInstancia();
 
-        caixa.registrarVenda(25.00); // Burger de carne simples
-        caixa.registrarVenda(32.50); // Burger com queijo e bacon extras
+        caixa.registrarVenda(25.00);
+        caixa.registrarVenda(32.50);
 
-        // 25.00 + 32.50 = R$ 57,50
         assertEquals(57.50, caixa.getSaldo(), 0.001, "O saldo acumulado do caixa deveria ser R$ 57,50.");
     }
 

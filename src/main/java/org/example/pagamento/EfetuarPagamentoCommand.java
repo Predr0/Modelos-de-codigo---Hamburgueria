@@ -11,7 +11,6 @@ public class EfetuarPagamentoCommand implements ComandoPagamento {
 
     @Override
     public void executar() {
-        // Dispara a ação que foi encapsulada dentro desse comando
         this.processador.processar(valorFinal);
     }
 }

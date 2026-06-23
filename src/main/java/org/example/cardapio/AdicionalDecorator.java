@@ -9,13 +9,11 @@ public abstract class AdicionalDecorator implements Hamburguer {
 
     @Override
     public void preparar() {
-        // Delega o preparo da base antes de colocar o adicional
         this.hamburguerDecorado.preparar();
     }
 
     @Override
     public double getPreco() {
-        // Delega o cálculo do preço acumulado até o momento
         return this.hamburguerDecorado.getPreco();
     }
 }

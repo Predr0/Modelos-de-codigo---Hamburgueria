@@ -13,7 +13,6 @@ class EfetuarPagamentoCommandTest {
     @Test
     @DisplayName("Deve executar a ação de pagamento que foi encapsulada dentro do comando")
     void deveExecutarAcaoDoComando() {
-        // Usamos um sinalizador lógico para checar se o comando chamou o processador de fato
         AtomicBoolean processadorFoiChamado = new AtomicBoolean(false);
         ProcessadorPagamentoTarget processadorMock = valor -> processadorFoiChamado.set(true);
 
@@ -21,7 +20,6 @@ class EfetuarPagamentoCommandTest {
 
         assertFalse(processadorFoiChamado.get(), "Não deve chamar antes do executar.");
 
-        // Bate o martelo
         comando.executar();
 
         assertTrue(processadorFoiChamado.get(), "O Command falhou em invocar o processamento interno ao ser executado.");

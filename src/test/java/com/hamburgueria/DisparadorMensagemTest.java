@@ -17,11 +17,10 @@ class DisparadorMensagemTest {
         System.setOut(new PrintStream(somConsole));
 
         DisparadorMensagem observer = new DisparadorMensagem();
-        // Passa "Recebido" para acionar o IF da sua classe
+
         observer.notificar("Pedro", "Recebido (Na Fila)");
 
         String resultadoLog = somConsole.toString();
-        // Valida a string que a sua classe DisparadorMensagem realmente imprime
         assertTrue(resultadoLog.contains("[PAINEL COZINHA]"));
         assertTrue(resultadoLog.contains("Pedro"));
 

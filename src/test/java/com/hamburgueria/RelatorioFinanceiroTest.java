@@ -17,7 +17,6 @@ class RelatorioFinanceiroTest {
         ByteArrayOutputStream somConsole = new ByteArrayOutputStream();
         System.setOut(new PrintStream(somConsole));
 
-        // Força um valor conhecido no Caixa para o relatório ler
         Caixa.getInstancia().resetarCaixa();
         Caixa.getInstancia().registrarVenda(120.50);
 
@@ -26,7 +25,6 @@ class RelatorioFinanceiroTest {
 
         String resultadoLog = somConsole.toString();
 
-        // Valida se as partes do Template Method foram impressas na ordem
         assertTrue(resultadoLog.contains("=== 📊 RELATÓRIO OPERACIONAL HAMBURGUERIA ==="), "Faltou o cabeçalho da classe mãe.");
         assertTrue(resultadoLog.contains("Faturamento Atual Registrado: R$ 120.5"), "Faltou o conteúdo da classe filha.");
         assertTrue(resultadoLog.contains("============================================="), "Faltou o rodapé da classe mãe.");

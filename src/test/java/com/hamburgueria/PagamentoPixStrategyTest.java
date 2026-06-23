@@ -13,7 +13,6 @@ class PagamentoPixStrategyTest {
     void deveCalcularDescontoPix() {
         PagamentoPixStrategy pix = new PagamentoPixStrategy();
 
-        // Se o burger custa R$ 30,00, com 10% fica R$ 27,00
         double valorFinal = pix.calcularValorFinal(30.00);
 
         assertEquals(27.00, valorFinal, 0.001);
